@@ -1,0 +1,15 @@
+<header>
+        <div class="title" menu_time="{{ menu_time }}" id="menu_time">
+            <h1>{{ title }}</h1>
+            <p lis="{{ text_list }}" id="banner_text" solgan_time="{{ banner_time }}">{{ text_list.0 }}</p>
+        </div>
+        {% for img in img_list %}
+            <div class="DongTai_nav">
+                <img src="{{ img }}"  draggable="false">
+            </div>
+        {% endfor %}
+        
+</header>
+    {#<h1>文献名邦 滇南邹鲁 古城建水</h1>#}
+{#            <h1>欢迎您！</h1>#}
+{#            <p>七彩云南、世界花园感受神奇与美丽，体味“有一种叫做云南的生活”</p>#}

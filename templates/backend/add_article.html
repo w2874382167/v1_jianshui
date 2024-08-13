@@ -1,0 +1,120 @@
+{# 继承后台样式#}
+{% extends 'backend/backend.html' %}
+{% block title %}
+	<title>写文章|后台</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/editor-md/css/editormd.css"/>
+    <link rel="stylesheet" href="/static/my/css/backend/add_article.css">
+{% endblock %}
+
+
+{# --------内容区域--------------------#}
+{% block main %}
+	<div class="add_info">
+        <el-button @click="add_drawer=true" type="success" round>文章信息</el-button>
+    </div>
+    <div id="editor">
+        <textarea style="display: none">内容....</textarea>
+    </div>
+    <el-drawer
+          title="完善文章信息"
+          :visible.sync="add_drawer"
+          direction="rtl"
+{#          :before-close="add_handleClose"#}
+          :modal-append-to-body = "false"
+          :size=600>
+      <div class="add_el_drawer_content">
+          <el-collapse v-model="add_article_activeNames">
+              <el-collapse-item title="文章标题" name="1">
+                <el-input v-model="title" placeholder="请输入文章标题"></el-input>
+                <el-input v-model="author" placeholder="作者"></el-input>
+                <el-input v-model="source" placeholder="来源"></el-input>
+              </el-collapse-item>
+              <el-collapse-item title="文章简介" name="2">
+                <el-input
+                    type="textarea"
+                    resize="none"
+                    :rows="2"
+                    placeholder="文章主要内容"
+                    v-model="abstract">
+                </el-input>
+              </el-collapse-item>
+              <el-collapse-item title="文章标签与分类" name="3">
+                  <el-select
+                    v-model="label"
+                    multiple
+                    collapse-tags
+                    style="margin-left: 20px;"
+                    placeholder="请选择文章标签">
+                      {% for tag in tags_list %}
+                      	<el-option
+                          label="{{ tag.title }}"
+                          value="{{ tag.nid }}">
+                        </el-option>
+                      {% endfor %}
+
+                  </el-select>
+                  <el-select v-model="category_id" placeholder="请选择文章分类" class="category">
+                    <el-option
+                      v-for="item in category_options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+                    </el-option>
+                </el-select>
+              </el-collapse-item>
+
+              <el-collapse-item title="文章封面" name="4" class="caver">
+                <div class="left">
+                    <img  id="cover_img">
+                </div>
+                <div class="right">
+                    <el-select v-model="cover_id" placeholder="请选择文章封面" @change="select_cover">
+                        {% for cover in cover_list %}
+                        	<el-option
+                              label="{{ cover.url.url}}"
+                              value="{{ cover.nid }}">
+                            </el-option>
+                        {% endfor %}
+                    </el-select>
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="其余设置 " name="5" class="other_select">
+                    <div>
+                        <el-switch
+                              v-model="recommend"
+                              active-text="上推荐"
+                              inactive-text="不上推荐">
+                        </el-switch>
+                    </div>
+                    <div>
+                        <el-switch
+                              v-model="status"
+                              active-text="发布"
+                              inactive-text="保存">
+                        </el-switch>
+                    </div>
+                    <div>
+                        <el-input v-model="link" placeholder="链接"></el-input>
+                    </div>
+              </el-collapse-item>
+          </el-collapse>
+
+          <div class="article_btn">
+              <el-button @click="add_article" type="success" round>发布文章</el-button>
+          </div>
+      </div>
+
+    </el-drawer>
+
+{% endblock %}
+
+{% block js %}
+	<script src="/static/editor-md/lib/marked.min.js"></script>
+    <script src="/static/editor-md/lib/prettify.min.js"></script>
+    <script src="/static/jquery/jquery.min.js"></script>
+    <script src="/static/editor-md/editormd.min.js"></script>
+    <script src="/static/my/js/add_article.js"></script>
+{% endblock %}

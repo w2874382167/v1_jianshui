@@ -1,0 +1,250 @@
+@charset "UTF-8";
+.model {
+  height: 100vh;
+  background-color: var(--model--main-bgc--);
+}
+.model .header {
+  height: 60px;
+  background-color: var(--model--main-left-right-bgc--);
+}
+.model .bodys {
+  width: 95%;
+  margin-top: 37px;
+  height: calc(100vh - 130px);
+  margin-left: 38px;
+}
+
+.bodys {
+  display: flex;
+}
+.bodys .menu {
+  width: 240px;
+  height: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px 20px 20px;
+  margin-left: 20px;
+  background-color: var(--model--main-left-right-bgc--);
+}
+.bodys .menu .title {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #808595;
+}
+.bodys .menu .title h1 {
+  color: #01a0e4;
+}
+.bodys .menu .history_list {
+  overflow-y: auto;
+  height: calc(100% - 105px);
+  color: var(--nav-color);
+}
+.bodys .menu .history_list ul {
+  padding: 0 5px 10px 5px;
+}
+.bodys .menu .history_list ul li {
+  height: 60px;
+  box-sizing: border-box;
+  padding: 15px 5px;
+  border-radius: 6px;
+  margin-bottom: 3px;
+}
+.bodys .menu .history_list ul li:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+.bodys .menu .history_list ul li:hover {
+  cursor: pointer;
+  background-color: #adbfcc;
+  color: white;
+}
+.bodys .menu .history_list ul li .dialog-text {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+.bodys .menu .history_list ul li .dialog-text .dialog-name {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 111px;
+}
+.bodys .menu .history_list ul li .dialog-text .el-button {
+  position: absolute;
+  top: -6px;
+  right: 12px;
+}
+.bodys .menu .history_list ul li.active {
+  background-color: #aac7de;
+  color: white;
+}
+.bodys .view {
+  margin-left: 30px;
+  width: calc(100% - 300px);
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px 20px 20px;
+  background-color: var(--model--main-left-right-bgc--);
+  border-radius: 10px;
+}
+.bodys .view .content {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.bodys .view .content .banner {
+  border-bottom: 1px solid #c2c5cc;
+}
+.bodys .view .content .banner h1 {
+  margin-left: 110px;
+  font-size: 44px;
+  margin-top: 7px;
+  color: #165dfe;
+}
+.bodys .view .content .banner p {
+  margin-left: 460px;
+  margin-top: 30px;
+  font-size: 23px;
+  color: var(--model--font);
+}
+.bodys .view .content .chatList {
+  padding: 10px;
+  overflow-y: auto;
+  min-height: 400px;
+  height: 400px;
+}
+.bodys .view .content .chatList .item .user-item {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+  height: auto;
+}
+.bodys .view .content .chatList .item .user-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.bodys .view .content .chatList .item .user-item .content {
+  margin-right: 10px;
+  align-items: end;
+  background-color: var(--model-bg);
+  color: var(--model--font);
+  border-radius: 5px;
+  margin-top: 5px;
+  width: fit-content;
+  height: 100%;
+  font-size: 21px;
+  max-width: 685px;
+  padding: 10px;
+  line-height: 34px;
+}
+.bodys .view .content .chatList .item .al-item {
+  display: flex;
+  margin-top: 20px;
+}
+.bodys .view .content .chatList .item .al-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.bodys .view .content .chatList .item .al-item .content {
+  margin-left: 10px;
+  align-items: end;
+  background-color: var(--model-bg);
+  color: var(--model--font);
+  border-radius: 5px;
+  margin-top: 5px;
+  width: fit-content;
+  max-width: 600px;
+  height: 100%;
+  font-size: 21px;
+  padding: 10px;
+  line-height: 34px;
+}
+.bodys .view .content .input {
+  margin-top: 10px;
+  width: 90%;
+  padding: 10px 0;
+  position: relative;
+}
+.bodys .view .content .input .arco-textarea {
+  margin-left: 30px;
+  width: 100%;
+  height: 30px;
+  resize: none;
+  font-size: 18px;
+  border-radius: 24px;
+  background-color: rgb(242, 243, 245);
+  color: rgb(29, 33, 41);
+}
+.bodys .view .content .input .arco-textarea:focus {
+  border-color: #00a8c6;
+  outline: none;
+}
+.bodys .view .content .input span {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 18px;
+  right: -18px;
+  transition: all 0.3s;
+}
+.bodys .view .content .input span:hover {
+  cursor: pointer;
+}
+.bodys .view .content .input span img {
+  width: 100%;
+  height: 100%;
+}
+.bodys .view .content .icon {
+  width: 90%;
+  height: 95%;
+}
+.bodys .view .content .icon img {
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* 自定义滚动条样式 */
+.chatList::-webkit-scrollbar {
+  width: 6px; /* 滚动条宽度 */
+}
+
+.chatList::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 滚动条轨道颜色 */
+}
+
+.chatList::-webkit-scrollbar-thumb {
+  background: #888; /* 滚动条滑块颜色 */
+  border-radius: 4px; /* 滚动条滑块圆角 */
+}
+
+.chatList::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 滑块悬停时颜色 */
+}
+
+/* 自定义滚动条样式 */
+.history_list::-webkit-scrollbar {
+  width: 6px; /* 滚动条宽度 */
+}
+
+.history_list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 滚动条轨道颜色 */
+}
+
+.history_list::-webkit-scrollbar-thumb {
+  background: #888; /* 滚动条滑块颜色 */
+  border-radius: 4px; /* 滚动条滑块圆角 */
+}
+
+.history_list::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 滑块悬停时颜色 */
+}
+
+/*# sourceMappingURL=model.css.map */

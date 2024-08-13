@@ -1,0 +1,108 @@
+.site{
+  width: 85%;
+  min-height: 600px;
+  background-color: #efeded;
+  border-radius: 5px;
+  .submit_site{
+    text-align: center;
+    height: 50px;
+    border-radius: 5px 5px 0 0;
+    .el-button{
+      width: 100%;
+
+    }
+  }
+  .site_list{
+    width: 95%;
+    margin:17px 23px;
+    .sitenav{
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      >i{
+        margin-right: 10px;
+      }
+    }
+    .site_content{
+      display: flex;
+      flex-wrap: wrap;
+      .site_card{
+        width: 298px;
+        height: 100px;
+        border-radius: 6px;
+        margin: 5px 10px;
+        background-color: #fff;
+        a{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          .left{
+          width: 20%;
+          margin-right: 5px;
+          position: relative;
+          img{
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 26px;
+            left: 18px;
+          }
+        }
+
+          .right{
+            width: 77%;
+            h2{
+              margin: 4px 0;
+              overflow: hidden;
+              white-space: nowrap; //不换行
+              text-overflow: ellipsis;
+            }
+            p{
+              overflow: hidden;
+              white-space: nowrap; //不换行
+              text-overflow: ellipsis;
+              margin-bottom: 5px;
+            }
+            span{
+              font-size: 14px;
+              i{
+                margin-right: 7px;
+              }
+            }
+        }
+        }
+      }
+    }
+  }
+}
+
+// 弹窗
+.el-form-item{
+  width: 100%;
+  margin-left: 100px;
+  position: relative;
+  .el-form-item__label{
+    color: #01a0e4;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .el-form-item__content{
+    width: 50%;
+    .el-select{
+      width: 328px;
+    }
+  }
+  .right{
+    position: absolute;
+    right: -56px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

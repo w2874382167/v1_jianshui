@@ -1,0 +1,107 @@
+.site {
+  width: 85%;
+  min-height: 600px;
+  background-color: #efeded;
+  border-radius: 5px;
+}
+.site .submit_site {
+  text-align: center;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+}
+.site .submit_site .el-button {
+  width: 100%;
+}
+.site .site_list {
+  width: 95%;
+  margin: 17px 23px;
+}
+.site .site_list .sitenav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.site .site_list .sitenav > i {
+  margin-right: 10px;
+}
+.site .site_list .site_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.site .site_list .site_content .site_card {
+  width: 298px;
+  height: 100px;
+  border-radius: 6px;
+  margin: 5px 10px;
+  background-color: #fff;
+}
+.site .site_list .site_content .site_card a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.site .site_list .site_content .site_card a .left {
+  width: 20%;
+  margin-right: 5px;
+  position: relative;
+}
+.site .site_list .site_content .site_card a .left img {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 26px;
+  left: 18px;
+}
+.site .site_list .site_content .site_card a .right {
+  width: 77%;
+}
+.site .site_list .site_content .site_card a .right h2 {
+  margin: 4px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.site .site_list .site_content .site_card a .right p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+.site .site_list .site_content .site_card a .right span {
+  font-size: 14px;
+}
+.site .site_list .site_content .site_card a .right span i {
+  margin-right: 7px;
+}
+
+.el-form-item {
+  width: 100%;
+  margin-left: 100px;
+  position: relative;
+}
+.el-form-item .el-form-item__label {
+  color: #01a0e4;
+  margin: 0 10px;
+  text-align: center;
+}
+.el-form-item .el-form-item__content {
+  width: 50%;
+}
+.el-form-item .el-form-item__content .el-select {
+  width: 328px;
+}
+.el-form-item .right {
+  position: absolute;
+  right: -56px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+}
+.el-form-item .right img {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=sitenav.css.map */

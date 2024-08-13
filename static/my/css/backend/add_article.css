@@ -1,0 +1,52 @@
+.add_info {
+  margin-bottom: 20px;
+}
+
+.add_el_drawer_content {
+  padding: 0 25px;
+}
+.add_el_drawer_content .el-collapse-item__wrap .el-collapse-item__content {
+  display: flex;
+}
+.add_el_drawer_content .el-collapse-item__wrap .el-collapse-item__content .el-input {
+  margin: 0 5px;
+}
+.add_el_drawer_content .category {
+  width: 40%;
+  margin-left: 50px;
+}
+.add_el_drawer_content .caver .el-collapse-item__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add_el_drawer_content .caver .el-collapse-item__content .left {
+  width: 40%;
+  max-height: 80px;
+}
+.add_el_drawer_content .caver .el-collapse-item__content .left img {
+  width: 100%;
+  margin-left: 5px;
+}
+.add_el_drawer_content .caver .el-collapse-item__content .right {
+  width: 58%;
+}
+.add_el_drawer_content .caver .el-collapse-item__content .right .el-input__inner {
+  margin-left: 35px;
+}
+.add_el_drawer_content .other_select .el-collapse-item__content {
+  display: block;
+}
+.add_el_drawer_content .other_select .el-collapse-item__content > div {
+  margin: 15px 3px;
+}
+
+.el-collapse {
+  position: relative;
+}
+.el-collapse .article_btn {
+  position: absolute;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=add_article.css.map */

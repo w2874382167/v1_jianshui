@@ -1,0 +1,75 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+  /* 背景图片上移  */
+  /* 调整背景图片的亮度 */
+}
+
+#app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/static/my/img/nav/back_blue.jpg) repeat center -600px;
+  filter: brightness(90%);
+  z-index: -1; /* 确保伪元素在内容后面 */
+  pointer-events: none; /* 确保伪元素不影响点击事件 */
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 17px;
+}
+
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px; /* 滚动条宽度 */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 滚动条轨道颜色 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* 滚动条滑块颜色 */
+  border-radius: 4px; /* 滚动条滑块圆角 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 滑块悬停时颜色 */
+}
+
+/*# sourceMappingURL=reset.css.map */

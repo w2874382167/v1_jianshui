@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=ZCOOL+XiaoWei&display=swap');
+#app{
+  display: flex;
+  font-family: "ZCOOL XiaoWei", sans-serif;
+  font-style: normal;
+}
+aside{
+  width: 250px;
+  height: 100vh;
+  background-color: #bdc3c7;
+  .solan{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid white;
+    h2{
+      font-family: "ZCOOL XiaoWei", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+      margin-top: 30px;
+    }
+    img{
+      width: 33%;
+      margin: 20px 20px 20px 30px;
+      border-radius: 52%;
+    }
+  }
+  #dynamic_nav{
+    width: 100%;
+    >a{
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s;
+      font-size: 18px;
+      &:hover{
+        background-color: rgba(0,0,0,0.2);
+      }
+    }
+  }
+  a.active{
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+  }
+}
+main{
+  width: calc(100% - 250px - 40px);
+  height: calc(100vh - 20px - 20px);
+  background-color: #f0eeee;
+  padding: 20px;
+  .user_info{
+    width: 100%;
+    display: flex;
+    height: 180px;
+    background-color: #bdc3c7;
+    box-shadow: inset 3px 3px 8px 0 rgba(0,0,0,0.35);
+    border-radius: 5px 5px 0 0;
+    .left{
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+    .right{
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .item{
+        display: flex;
+        width: 50%;
+        &:last-child{
+          width: 100%;
+          span{
+            font-family: "Long Cang", cursive;
+            font-weight: 600;
+            font-style: normal;
+            color: #409eff;
+            h3{
+              font-size: 22px;
+              color: #000000;
+            }
+          }
+        }
+        &:nth-last-child(2),&:nth-last-child(3) {
+          span{
+            color: #00fd46;
+            h3{
+              color: #000000;
+            }
+          }
+        }
+        span{
+          font-size: 22px;
+          font-family: "ZCOOL XiaoWei", sans-serif;
+          font-weight: 600;
+          font-style: normal;
+          text-align: right;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          h3{
+            font-family: "Long Cang", cursive;
+            font-style: normal;
+            font-size: 23px;
+            margin-right: 10px;
+          }
+        }
+        &:nth-child(1),&:nth-child(2){
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  .actions{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 10px;
+    background-color: #bdc3c7;
+    align-items: center;
+    position: relative;
+    #superuser{
+      position: absolute;
+      top: 20px;
+      left: 60px;
+    }
+    .item{
+       margin-right: 156px;
+      &:first-child{
+        margin-left: 320px;
+      }
+    }
+  }
+
+  .collect_article{
+    p{
+      text-align: center;
+      height: 40px;
+      user-select: none;
+      span{
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .item{
+      background-color: #ecf0f1;
+      height: 400px;
+      >ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        > li {
+          width: 33.33%;
+          box-sizing: border-box;
+          height: 100px;
+          display: flex;
+          padding: 5px 0 10px 10px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .left {
+        width: 40%;
+        height: 99px;
+
+        > div {
+          overflow: hidden;
+          height: 100px;
+          margin-top: 8px;
+          // border-radius: 5px;
+          img {
+            width: 100%;
+            transition: all 0.5s;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+
+      .right {
+            width: 58%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 7px;
+            box-sizing: border-box;
+            padding: 0 8px 0 5px;
+            h2 {
+              font-size: 20px;
+              margin-top: 7px;
+              overflow: hidden;
+              white-space: nowrap; //不换行
+              text-overflow: ellipsis;
+            }
+            p {
+              overflow: hidden;
+              white-space: nowrap; //不换行
+              text-overflow: ellipsis;
+              font-size: 15px;
+              box-sizing: border-box;
+              padding-top: 9px;
+            }
+            span {
+              font-size: 14px;
+              color: #605f5f;
+            }
+      }
+    }
+  }
+}
+
+// 弹窗
+.el-form-item{
+  width: 90%;
+  .el-form-item__label{
+    color: #01a0e4;
+    width: 40%;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .el-form-item__content{
+    width: 50%;
+    .el-select{
+      width: 230px;
+    }
+  }
+}

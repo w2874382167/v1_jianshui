@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>古城建水|用户登录</title>
+    <link rel="shortcut icon" href="/static/my/img/favicon/favicon.ico">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/static/my/css/reset.css">
+    <link rel="stylesheet" href="/static/my/css/login.css">
+</head>
+<body>
+     {#  移动的云朵  #}
+    <div class="could_big">
+        <div class="could"></div>
+    </div>
+    <!-- 整体布局 -->
+    <div class="container right-panel-active" id="app_login">
+        <!-- 注册框 -->
+        <div class="container_form container--signup">
+{#            <form action="#" class="form" id="form1">#}
+            <div class="form" id="form1">
+                <h2 class="form_title">注册账号</h2>
+                {% csrf_token %}
+                <input type="text"  ref="signup_from_name" placeholder="用户名" class="input" v-model="signup_from.name">
+                <input type="password"  ref="signup_from_pwd" placeholder="密码" class="input" v-model="signup_from.pwd">
+                <input type="password"  ref="signup_from_pwd_again" placeholder="请再次输入密码" class="input" v-model="signup_from.pwd_again">
+                <button class="btn" @click="signup">点击注册</button>
+{#            </form>#}
+            </div>
+        </div>
+        <!-- 登录框 -->
+        <div class="container_form container--signin">
+            <div class="form" id="form2">
+{#            <form action="#" class="form" id="form2">#}
+                <h2 class="form_title">欢迎登录</h2>
+                {% csrf_token %}
+                <input type="text" ref="login_from_name" placeholder="用户名" class="input" v-model="login_from.name">
+                <input type="password" ref="login_from_pwd" placeholder="password" class="input" v-model="login_from.pwd">
+                <a href="#" class="link">忘记密码？还在研发，你可别忘记(灬ꈍ ꈍ灬)</a>
+                <button class="btn" @click="login">登录</button>
+{#            </form>#}
+            </div>
+        </div>
+        <!-- 遮盖动画部分 -->
+        <div class="container_overlay">
+            <div class="overlay">
+                <div class="overlay_panel overlay_left">
+                    <button class="btn1" id="signin">已有账号,火速登录</button>
+                </div>
+                <div class="overlay_panel overlay_right">
+                    <button class="btn1" id="signup">没有账号，快速注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/axios/axios.min.js"></script>
+<script src="/static/vue/vue.js"></script>
+<!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="/static/my/js/login.js"></script>
+</html>

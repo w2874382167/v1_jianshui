@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% block Title %}
+	<title>大模型|古城建水</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/my/css/model.css">
+{% endblock %}
+{% block loading %}
+	
+{% endblock %}
+{% block model %}
+   <div class="model">
+   {% csrf_token %}
+   <div class="header"></div>
+   <div class="bodys">
+       <div class="menu">
+           <div class="title"><h1>历史对话</h1></div>
+           <div class="history_list">
+               <ul class="dialog-list">
+                   <li :class="item===current_date?'active':'' " v-for="item in historylist" :key="item">
+                       <div class="dialog-text">
+                           <span class="dialog-name"  @click="get_chatlist(item)">[[ item ]]</span>
+                           <el-button type="danger" icon="el-icon-delete" circle @click="delete_data(item)"></el-button>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+       </div>
+       <div class="view">
+           <div class="content">
+               <div class="banner">
+                   <h1>Hi,我是“喜儿”</h1>
+                   <p>您的专属旅游助手，助您玩遍建水各地(*╹▽╹*)</p>
+               </div>
+               <div class="chatList" id="chatlist">
+                   <div v-if="chat_data_list.length === 0" class="icon">
+                       <img src="/static/my/img/model/nodata.67f7a1c9.png">
+                   </div>
+                   <div class="item" v-for="data in chat_data_list" :key="item">
+                       <div class="user-item">
+                           <img src="/media/avatars/头像_0005_24.jpg">
+                           <div class="content">[[ data.message ]]</div>
+                       </div>
+                       <div class="al-item">
+                           <img src="/media/avatars/头像_0004_17.jpg" alt="">
+                           <div class="content">[[ data.response ]]</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="input">
+                   <textarea @keyup.Enter="key" ref="messageBox" suffix-icon="el-icon-edit" class="arco-textarea" placeholder="说点什么呗..." ></textarea>
+                   <span @click="sendmessage()">
+                    <!-- 这里可以放置你想要的图标，可以是SVG、Font Awesome图标等 -->
+                       <img src="/static/my/img/model/纸飞机.svg" v-show="lodingOrair==='air'">
+                       <img src="/static/my/img/model/loading.svg" v-show="lodingOrair==='loding'">
+                  </span>
+               </div>
+           </div>
+       </div>
+   </div>
+   </div>
+{% endblock %}
+
+{% block js_model %}
+{#	轮播图部分的代码，没有会报错 #}
+{% endblock %}

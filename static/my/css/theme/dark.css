@@ -1,0 +1,17 @@
+:root {
+  --nav-bg: #282c34;
+  --nav-color: white;
+  --nav_top_bgc: #282c34;
+  --nav_top_a: white;
+  --footer_contract: #f1c40f;
+  --main-bg:#071418;
+  --main-color: #808595;
+  --footer-bg: #282c34;
+  --footer-color: white;
+  --model-bg:#17171a;
+  --model--font:#ffffff;
+  --model--main-bgc--:#282828;
+  --model--main-left-right-bgc--:#17171a;
+}
+
+/*# sourceMappingURL=dark.css.map */

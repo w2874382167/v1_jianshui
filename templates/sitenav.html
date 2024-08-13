@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+{% block Title %}
+	<title>网站导航|古城建水</title>
+{% endblock %}
+{% load my_tag %}
+{% block banner %}
+	{% banner 'site' %}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/my/css/sitenav.css">
+{% endblock %}
+{% block loading %}
+	
+{% endblock %}
+{% block main %}
+    <div class="site">
+        <div class="submit_site">
+            <el-button type="primary" plain @click="edit_site = true">添加网站</el-button>
+        </div>
+        <div class="site_list">
+        {% for nav_tag in nav_tags %}
+        	<div class="sitenav">
+            <i class="{{ nav_tag.iconText }}"></i><h3>{{ nav_tag.title }}</h3>
+        </div>
+            <div class="site_content">
+            {% for site in nav_tag.sitenav_set.all %}
+            	<div class="site_card">
+                <a href="{{ site.href }}" target="_blank">
+                    <div class="left">
+                        <img src="{{ site.icon_href }}">
+                    </div>
+                    <div class="right">
+                        <h2>{{ site.title }}</h2>
+                        <p>{{ site.abstract }}</p>
+                        <span><i class="far fa-clock"></i>创建时间：{{ site.create_date|date:'y-m' }}</span>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    {# 弹窗完善信息#}
+    <el-dialog
+      title="添加网站"
+      :visible.sync="edit_site"
+      width="50%"
+      :modal-append-to-body = "false"
+      center>
+      <el-form :inline="true" style="margin-left: 5px;"
+               ref="form" :model="form"
+            label-width="114px" label-position="right" size="mini">
+          <el-form-item label="网站名字：">
+              <el-input   suffix-icon="el-icon-edit" v-model="form.title" placeholder="请输入网站名字"></el-input>
+            </el-form-item>
+          <el-form-item label="网站链接：">
+              <el-input   suffix-icon="el-icon-edit" v-model="form.href" placeholder="请输入网站链接"></el-input>
+            </el-form-item>
+          <el-form-item label="网站简介：">
+              <el-input   suffix-icon="el-icon-edit" v-model="form.abstract" placeholder="请输入网站简介"></el-input>
+            </el-form-item>
+          <el-form-item label="网站归属：">
+                <el-select v-model="form.tag" placeholder="请选择网站归属">
+                    {% for nav in nav_tags %}
+                        <el-option
+                          label="{{ nav.title }}"
+                          value="{{ nav.nid }}">
+                        </el-option>
+                    {% endfor %}
+                </el-select>
+            </el-form-item>
+          <el-form-item label="网站图标链接：">
+              <el-input   suffix-icon="el-icon-edit" v-model="form.icon_href" placeholder="请输入网站在线图标链接"></el-input>
+              <div class="right">
+                  <img :src="form.icon_href">
+              </div>
+          </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" size="mini" @click="add_site_btn">确定</el-button>
+        <el-button type="info" size="mini" @click="edit_site = false">取 消</el-button>
+      </span>
+    </el-dialog>
+{% endblock %}

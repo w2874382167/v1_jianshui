@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block Title %}
+	<title>新闻热搜|古城建水</title>
+{% endblock %}
+{% load my_tag %}
+{% block banner %}
+	{% banner 'new' %}
+{% endblock %}
+
+{# --------样式--------------------#}
+{% block css %}
+    <link rel="stylesheet" href="/static/my/css/news.css">
+    <!-- 引入element-ui样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+{% endblock %}
+{# --------内容区域--------------------#}
+{% block loading %}
+	
+{% endblock %}
+{% block main %}
+	<div class="new">
+    <div class="news_content">
+        <div class="left">
+            <ul>
+                <li :class="item.name===new_active?'active':'' " v-for="item in new_title" :key="item.id" @click="get_new_data(item.id ,item.name,item.img)">
+                    <img :src="item.img">[[ item.name ]]
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="title">
+                <img :src="new_active_url">
+                <h2>[[ new_active ]]·热搜榜</h2>
+            </div>
+            <div class="body">
+                <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+                    <li v-for="item in new_list" :key="item.index"  class="infinite-list-item">
+                        <span class="index">[[ item.index ]]</span>
+                        <a :href="item.appUrl" target="_blank">[[ item.query ]]</a>
+                        <span class="number">[[ item.hotScore ]]</span>
+                        <!-- 只有当 item.hotTagImg 存在时，才显示 img 元素 -->
+                        <img v-if="item.hotTagImg" :src="item.hotTagImg" class="hotimg">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+{# -------------js--------------------#}
+{% block js %}
+	<script src="/static/vue/vue.js"></script>
+<!-- 引入element-ui组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+{% endblock %}

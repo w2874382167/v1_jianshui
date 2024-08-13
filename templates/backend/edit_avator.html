@@ -1,0 +1,26 @@
+{# 继承后台样式#}
+{% extends 'backend/backend.html' %}
+
+{% block title %}
+	<title>修改头像|后台</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/my/css/backend/edit_avator.css">
+{% endblock %}
+
+{% block backend_main %}
+	<ul class="avatar_list">
+    {% for avatar in avatar_list %}
+    	<li>
+        <el-radio v-model="edit_avatar_id" label="{{ avatar.nid }}"></el-radio>
+            <img src="{{ avatar.url.url }}">
+        </li>
+    {% endfor %}
+    </ul>
+    <el-button type="primary" @click="edit_avatar">确认修改</el-button>
+{% endblock %}
+
+{% block js %}
+	
+{% endblock %}

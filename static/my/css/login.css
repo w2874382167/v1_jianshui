@@ -1,0 +1,326 @@
+@charset "UTF-8";
+:root {
+  /* 背景颜色 */
+  --white: #e9e9e9;
+  --gray: #333;
+  --blue: #498ab7;
+  --lightbule: #0ab4c5;
+  /* 外边框圆角属性 */
+  --button-redious: 0.7rem;
+  --max-width: 758px;
+  --max-height: 450px;
+  /* 字体样式 */
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  align-items: center;
+  background: var(--white) url(/static/my/img/login/ShanYun.png) no-repeat fixed center;
+  background-size: cover;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  /*内容垂直和水平居中对齐*/
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* 防止横向滚动条出现 */
+}
+
+/* 飘动的云朵 */
+.could_big {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  /* -webkit-transform: translateY(-50%); */
+  /* overflow: hidden; */
+}
+
+.could {
+  background-image: url(/static/my/img/login/Yun.png);
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 460px;
+  animation: move_wave_big 30s linear infinite;
+}
+
+@keyframes move_wave_big {
+  0% {
+    transform: translateX(0) translateY(0) scaleY(1);
+  }
+  25% {
+    transform: translateX(-12.5%) translateY(-80px) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateY(0) scaleY(1);
+  }
+  75% {
+    transform: translateX(-37.5%) translateY(80px) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scaleY(1);
+  }
+}
+/* 主容器 */
+/*
+    设置了背景颜色、圆角、阴影效果、最大宽度和高度，并相对定位。
+ */
+.container {
+  background-color: var(--white);
+  border-radius: var(--button-redious);
+  box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25);
+  height: var(--max-height);
+  max-width: var(--max-width);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: -20px;
+}
+
+/* 表单容器 */
+/*
+ 将表单容器高度设置为100%，绝对定位到顶部，且添加过渡效果。
+*/
+.container_form {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+/* 登录表单 */
+/*
+.container--signin初始位置在左侧，宽度为50%，z-index为2，使其在另一层之上。
+当container有right-panel-active类时，表单向右移动100%，滑出视图
+*/
+.container--signin {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .container--signin {
+  transform: translateX(100%);
+  /* transition: transform 0.6s translateX(100%); */
+}
+
+/* 注册表单 */
+/*
+container--signup初始位置在左侧，透明度为0，宽度为50%，z-index为1。
+当container有right-panel-active类时，表单向右移动100%，动画显示，透明度变为1，z-index为5。
+*/
+.container--signup {
+  left: 0;
+  opacity: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.container.right-panel-active .container--signup {
+  transform: translateX(100%);
+  animation: show 0.1ms;
+  opacity: 1;
+  z-index: 5;
+}
+
+/* 覆盖层样式 */
+/*
+.container_overlay覆盖层设置高度为100%，绝对定位到顶部和左侧50%，添加过渡效果。
+当container有right-panel-active类时，覆盖层向左移动100%。
+*/
+.container_overlay {
+  height: 100%;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: transform 0.6s ease-in-out;
+  width: 50%;
+  z-index: 100;
+}
+
+.container.right-panel-active .container_overlay {
+  transform: translateX(-100%);
+}
+
+/* 内部覆盖层样式 */
+/*
+.overlay背景颜色和背景图片设置，以及其他样式属性确保覆盖层正确显示并具有过渡效果。
+当container有right-panel-active类时，覆盖层向右移动50%。
+*/
+.overlay {
+  background: url(/static/my/img/login/ShanYun.png) no-repeat fixed center;
+  background-size: cover;
+  height: 100%;
+  left: -100%;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  width: 200%;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+/* 覆盖层面板样式 */
+/*
+.overlay_panel面板设置了对齐方式、布局、定位和过渡效果。
+当container有right-panel-active类时，左侧和右侧面板分别移动
+*/
+.overlay_panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  width: 50%;
+}
+
+.overlay_left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay_left {
+  transform: translateX(0);
+}
+
+.overlay_right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay_right {
+  transform: translateX(20%);
+}
+
+/* 按钮样式 */
+/*
+设置了背景颜色、渐变、圆角、边框、字体样式和过渡效果。
+form .btn按钮在表单中的额外样式
+btn:active和.btn:focus添加了按下和聚焦时的效果
+*/
+.btn1 {
+  background-image: linear-gradient(90deg, var(--lightbule) 10%, var(--blue) 74%);
+  border-radius: 10px;
+  border: 1px solid var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 0.9rem 0.4rem;
+  transition: transform 80ms ease-in;
+}
+
+.btn1:active {
+  transform: scale(0.95);
+}
+
+.btn1:focus {
+  outline: none;
+}
+
+.form {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 3rem;
+  height: 100%;
+  text-align: center;
+}
+.form .btn:active {
+  transform: scale(0.95);
+}
+.form .btn:focus {
+  outline: none;
+}
+.form .btn {
+  width: 100px;
+  background-color: #1abc9c;
+  border-radius: 10px;
+  border: 1px solid var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 0.9rem 0.4rem;
+  transition: transform 80ms ease-in;
+}
+.form .btn:hover {
+  background-color: #099f83;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 2px solid var(--blue);
+}
+
+/* 表单 */
+/* 设置了背景颜色、边框、内边距、外边距和宽度 */
+.input {
+  background-color: #fff;
+  margin: 0.5rem 0;
+  width: 100%;
+  border: 2px solid #bdc3c7;
+  color: #34495e;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 5px 12px;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.input:focus {
+  border-color: #7aeaa5;
+  outline: none;
+}
+
+/* 表单标题 */
+.form_title {
+  font-weight: 300;
+  margin: 0 0 1.25rem;
+}
+
+/* 链接 */
+/* 设置了颜色、字体大小、边距和文本装饰 */
+.link {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  text-decoration: none;
+}
+
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100% {
+    opacity: 1;
+    z-index: 3;
+  }
+}
+.error-border:focus {
+  border: 2px solid #f56c6c;
+}
+
+.error-border:focus {
+  border: 2px solid #f56c6c;
+}
+
+.el-button {
+  color: red;
+  font-size: 900px;
+}
+
+/*# sourceMappingURL=login.css.map */

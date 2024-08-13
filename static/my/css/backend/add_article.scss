@@ -1,0 +1,51 @@
+.add_info{
+  margin-bottom: 20px;
+}
+
+.add_el_drawer_content{
+  padding: 0 25px;
+  .el-collapse-item__wrap .el-collapse-item__content{
+    display: flex;
+    .el-input{
+      margin: 0 5px;
+    }
+  }
+  .category{
+    width: 40%;
+    margin-left: 50px;
+  }
+  .caver .el-collapse-item__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .left{
+      width: 40%;
+      max-height: 80px;
+      img{
+        width: 100%;
+        margin-left: 5px;
+      }
+    }
+    .right{
+      width: 58%;
+      .el-input__inner{
+        margin-left: 35px;
+      }
+    }
+  }
+  .other_select .el-collapse-item__content{
+    display: block;
+    >div{
+      margin: 15px 3px;
+    }
+  }
+}
+
+.el-collapse{
+  position: relative;
+  .article_btn{
+    position: absolute;
+    margin-top: 30px;
+  }
+}
+
