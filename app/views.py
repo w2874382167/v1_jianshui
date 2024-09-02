@@ -98,6 +98,7 @@ def backend(request):
         return redirect('/login/')  # 没有登录，不给访问后台
     # ip信息
     ip = get_client_ip(request)
+    print(ip)
     collect_list = request.user.collects.all()  # 拿到收藏的文章，是自己相关的
     return render(request, 'backend/backend.html', locals())
 

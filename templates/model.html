@@ -37,14 +37,17 @@
                    <div v-if="chat_data_list.length === 0" class="icon">
                        <img src="/static/my/img/model/nodata.67f7a1c9.png">
                    </div>
-                   <div class="item" v-for="data in chat_data_list" :key="item">
+                   <div class="item" v-for="data in chat_data_list" :key="generateKey(data)">
                        <div class="user-item">
                            <img src="/media/avatars/头像_0005_24.jpg">
-                           <div class="content">[[ data.message ]]</div>
+                           <div class="content" id="content_text">[[ data.message ]]
+                           </div>
+                           
                        </div>
                        <div class="al-item">
                            <img src="/media/avatars/头像_0004_17.jpg" alt="">
-                           <div class="content">[[ data.response ]]</div>
+                           <div class="content" id="content_text">[[ data.response ]]
+                           </div>
                        </div>
                    </div>
                </div>
@@ -61,7 +64,21 @@
    </div>
    </div>
 {% endblock %}
-
 {% block js_model %}
 {#	轮播图部分的代码，没有会报错 #}
+{#    <script src="/static/editor-md/lib/marked.min.js"></script>#}
+{#    <script src="/static/editor-md/lib/prettify.min.js"></script>#}
+{#    <script src="/static/jquery/jquery.min.js"></script>#}
+{#    <script src="/static/editor-md/editormd.min.js"></script>#}
+{#    <script type="text/javascript">#}
+{#        $(function() {#}
+{#            let editor = editormd.markdownToHTML("content_text", {#}
+{#                width: "100%",#}
+{#                height: "100%",#}
+{#                path: "/static/editor-md/lib/",#}
+{#                htmlDecode: false,#}
+{#                codeFold: true,#}
+{#            });#}
+{#        });#}
+{#    </script>#}
 {% endblock %}

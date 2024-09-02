@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.views import View # CBV
 from api.views import SparkApi
 
+# 大模型api和一些实现函数
 class API():
     def __init__(self):
         # 获取当前文件的同级目录路径

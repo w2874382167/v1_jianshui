@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fg99alc))wr2&y)#of3e9pyny8qgcb$fcvxmuost$oc3gh0%tx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,12 +86,25 @@ WSGI_APPLICATION = 'v1_jianshui.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'v1_jianshui',  # 数据库名字
+#         'USER': 'v1_jianshui',
+#         'PASSWORD': 'LrHRLiMCitLJPczp',
+#         'HOST': 'localhost',  # 地址
+#         'PORT': 3306,
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#         },
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'v1_jianshui',  # 数据库名字
-        'USER': 'v1_jianshui',
-        'PASSWORD': 'LrHRLiMCitLJPczp',
+        'USER': 'root',
+        'PASSWORD': '123456',
         'HOST': 'localhost',  # 地址
         'PORT': 3306,
         'OPTIONS': {

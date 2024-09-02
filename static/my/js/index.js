@@ -243,6 +243,11 @@ new Vue({
         key() {
             this.sendmessage()
         },
+
+        //使用md渲染输出，由于没有key遍历不了，自己生成一个
+        generateKey(data){
+            return JSON.stringify(data);
+        },
         // 天气
         get_weather() {
             axios.get('/api/weather/')
