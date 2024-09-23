@@ -11,8 +11,8 @@ urlpatterns = [
     path('signup/', login.SignupView.as_view()),  # 注册
     path('article/', add_article.AddArticleView.as_view()),  # 添加文章
     re_path('article/digg/(?P<nid>\d+)/', add_article.ArticlesDiggView.as_view()),  # 文章点赞
-    re_path('article/collect/(?P<nid>\d)/', add_article.ArticlesCollectView.as_view()),  # 文章收藏
-    re_path('news/(?P<nid>\d)/', news.NewsView.as_view()),  # 新闻
+    re_path('article/collect/(?P<nid>\d+)/', add_article.ArticlesCollectView.as_view()),  # 文章收藏
+    re_path('news/(?P<nid>\d+)/', news.NewsView.as_view()),  # 新闻
 
     path('user/info', user.editUserView.as_view()),  # 完善个人信息
     path('edit_avatar/', user.EditAvatarView.as_view()),  # 修改头像

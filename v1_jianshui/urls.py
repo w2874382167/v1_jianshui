@@ -37,7 +37,7 @@ urlpatterns = [
     path('backend/', views.backend),  # 后台
     path('backend/add_article/', views.add_article),  # 写文章
     path('backend/edit_avator/', views.edit_avator),  # 修改头像
-    re_path(r'^article/(?P<nid>\d)/', views.article),  # 拿到article并接收后面的数字
+    re_path(r'^article/(?P<nid>\d+)/', views.article),  # 拿到article并接收后面的数字
 
     # 路由分发
     # 所有api开头的请求，将到api路由处理

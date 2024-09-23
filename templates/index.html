@@ -24,7 +24,7 @@
 </head>
 <body>
 {% block loading %}
-	<div class="loadingdiv">
+    <div class="loadingdiv">
         <div class="loading"></div>
         <span>加载中...</span>
     </div>
@@ -323,13 +323,13 @@
 
 <script>
     //把加载动画的代码挂这里，不写如js文件，希望它快一点执行
-    document.body.style.overflow='hidden';
-    $(window).on('load',function (){
-        document.body.style.overflow='';
+    document.body.style.overflow = 'hidden';
+    $(window).on('load', function () {
+        document.body.style.overflow = '';
         $('.loadingdiv').fadeOut("slow");
     });
-    
-        //--------------- 动态导航栏变色---------------------
+
+    //--------------- 动态导航栏变色---------------------
     let nav = document.querySelector('.nav_bg')
     window.onscroll = function () {
         let top = document.documentElement.scrollTop
@@ -339,7 +339,7 @@
             nav.classList.remove('show')
         }
     }
-    
+
     // ---------动态导航字体被选中--------------
     function dynamic_nav() {
         let a_list = document.querySelectorAll('#dynamic_nav>a')
@@ -351,9 +351,9 @@
             }
         }
     }
-    
+
     dynamic_nav()
-    
+
     //----------卡片滑动滚动效果---------
     let cards = document.querySelectorAll('.card1')
     window.addEventListener('scroll', () => {

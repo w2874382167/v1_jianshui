@@ -30,9 +30,9 @@ let text_list = eval(banner_text.getAttribute('lis'))
 let solgan_time = Number(banner_text.getAttribute('solgan_time'))
 let solgan_index = 0
 timer1 = setInterval(() => {
-    console.log(1)
-    console.log(text_list)
-    console.log(text_list[solgan_index])
+    // console.log(1)
+    // console.log(text_list)
+    // console.log(text_list[solgan_index])
             if (solgan_index === text_list.length) {
                 solgan_index = 0
             }
