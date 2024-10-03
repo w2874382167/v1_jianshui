@@ -1,6 +1,10 @@
 <header>
         <div class="title" menu_time="{{ menu_time }}" id="menu_time">
-            <h1>{{ title }}</h1>
+            {% if article %}
+            	<h1 id="article_h1">{{ title }}</h1>
+            {% else %}
+                <h1>{{ title }}</h1>
+            {% endif %}
             <p lis="{{ text_list }}" id="banner_text" solgan_time="{{ banner_time }}">{{ text_list.0 }}</p>
         </div>
         {% for img in img_list %}

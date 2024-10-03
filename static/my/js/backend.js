@@ -24,6 +24,11 @@ axios.interceptors.request.use(request => {
     new Vue({
         el:'#app',
         data:{
+            max_dialog_width:'600px', // 抽屉
+            maxs_dialog_width: "40%", //弹窗
+            button_width: "medium", // 按钮大小
+            flag_computer_phone: true, //保证用电脑发文章
+            aside_main_drawer:true, // 默认要打开侧边栏
             add_drawer:false,  //侧边栏默认关闭
             add_article_activeNames:['1'], //默认填写侧边栏第一个
             title:'',                   //标题
@@ -56,8 +61,34 @@ axios.interceptors.request.use(request => {
             //-----修改头像---------
             edit_avatar_id: '',
         },
+        created() {
+            this.init_dialog()
+        },
         methods:{
             //-----发布文章------------
+            // 手机进入网站导航弹窗调整
+            init_dialog(){
+                let width = $(document).width()
+                if(width <= 703){
+                    this.max_dialog_width = '400px'
+                    this.maxs_dialog_width = '420px'
+                    this.button_width = "mini"
+                    this.flag_computer_phone = false
+                }
+                console.log(this.flag_computer_phone)
+            },
+            drawer_backend(){
+                let flag = this.aside_main_drawer
+                if(flag){
+                    $('aside').addClass('show_drawer')
+                    $('main').addClass('show_drawer')
+                }
+                else{
+                    $('aside').removeClass('show_drawer')
+                    $('main').removeClass('show_drawer')
+                }
+                this.aside_main_drawer = !flag
+            },
             //发布文章
             add_article(){
                 let data ={
@@ -103,7 +134,6 @@ axios.interceptors.request.use(request => {
                     .then(res=>{
                         if (res.code){
                             this.form = res.data
-                            console.log(this.form)
                             this.edit_info=true
                             return
                         }
@@ -135,4 +165,5 @@ axios.interceptors.request.use(request => {
                 })
             }
         },
+
     })

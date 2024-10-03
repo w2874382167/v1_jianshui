@@ -46,7 +46,7 @@
     <el-dialog
       title="添加网站"
       :visible.sync="edit_site"
-      width="50%"
+      :width="max_dialog_width"
       :modal-append-to-body = "false"
       center>
       <el-form :inline="true" style="margin-left: 5px;"

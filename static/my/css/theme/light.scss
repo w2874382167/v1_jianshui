@@ -17,4 +17,34 @@
   --model--font:#000000;
   --model--main-bgc--:#f8f9fa;
   --model--main-left-right-bgc--:white;
+  --model_chatlist_border-color: #c2c5cc;
+
+  // 主界面卡片
+  --card-bg-: white;
+  --card--font: #333;
+  --card-all_article:white;
+  --article_info-font: #605f5f;
+  --tag_square-color:rgba(22, 93, 255);
+  --tag_body_bg1:#f7f8fa;
+  --tag_body_bg2:#f2f3f5;
+  --tag_body_color:#808595;
+  --all_article_page-bg:white;
+  --all_article_page_select-bg:dodgerblue;
+  --all_article_page_select_ing-bg: #3894ee;
+  --all_article_page_select_ing_boder:none;
+
+  // 新闻主界面
+  --news-bg:#fff;
+  --news-font: #333;
+
+  // 网站导航
+  --sitenav-bg:#efeded;
+  --site_card-bg:#fff;
+  --site_card-font: #333;
+
+  // 侧边栏
+  --drawer-bg: #f0eeee;
+  --drawer_a-bg: #f2f3f5;
+  --drawer-font: #333;
+  --drawer_activte-font: #06cce7;
 }

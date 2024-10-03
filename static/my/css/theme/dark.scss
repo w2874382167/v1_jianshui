@@ -14,8 +14,38 @@
   --footer-color: white;
 
   //大模型
-  --model-bg:#17171a;
-  --model--font:#ffffff;
-  --model--main-bgc--:#282828;
-  --model--main-left-right-bgc--:#17171a;
+  --model-bg: #17171a;
+  --model--font: #ffffff;
+  --model--main-bgc--: #282828;
+  --model--main-left-right-bgc--: #17171a;
+  --model_chatlist_border-color: #ffffff;
+
+  // 主界面卡片
+  --card-bg-: #1a1a1a;
+  --card--font: #e3e0e0;
+  --card-all_article:#1a1a1a;
+  --article_info-font: #808595;
+  --tag_square-color:#ff9800;
+  --tag_body_bg1:#808595;
+  --tag_body_bg2: #69696c;
+  --tag_body_color: #e3e0e0;
+  --all_article_page-bg: #c4c2c2;
+  --all_article_page_select-bg: #676769;
+  --all_article_page_select_ing-bg: #adb6b6;
+  --all_article_page_select_ing_boder: 1.5px solid #ff9800;
+
+  // 新闻主界面
+  --news-bg: #282828;
+  --news-font: white;
+
+  // 网站导航
+  --sitenav-bg: #5b5d5d;
+  --site_card-bg: #282828;
+  --site_card-font: #e3e0e0;
+
+  // 侧边栏
+  --drawer-bg: #17171a;
+  --drawer_a-bg: #282828;
+  --drawer-font: #ffffff;
+  --drawer_activte-font: #00fd46;
 }

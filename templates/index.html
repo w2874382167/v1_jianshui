@@ -2,6 +2,9 @@
 <html lang="zh">
 {% load my_tag %}
 <head>
+    {#------手机适配---------#}
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
     <link rel="shortcut icon" href="/static/my/img/favicon/favicon.ico">
     <meta charset="UTF-8">
     {#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
@@ -21,6 +24,8 @@
     {% endblock %}
     <!-- 引入element-ui样式 -->
     <link rel="stylesheet" href="/static/element-ui/theme-chalk/index.css">
+    <link rel="stylesheet" href="/static/my/css/phone.css">
+    {#------手机适配---------#}
 </head>
 <body>
 {% block loading %}
@@ -32,11 +37,30 @@
 <div id="app">
     {#  通过变量控制css文件的加载路径  #}
     <link rel="stylesheet" :href="'/static/my/css/theme/'+ theme +'.css'">
+    <el-drawer
+          title="建水欢迎您(*╹▽╹*)"
+          style="display: none"
+          :modal="false"
+          @open="nav_open_drawer"
+          @opened="nav_open_drawer_dom"
+          @close="nav_close_drawer"
+          :visible.sync="nav_drawer"
+          direction="ltr">
+          <div class="content_drawer" id="drawer_nav">
+              <a href="/">首页 <i class="fa fa-arrow-left"></i> </a>
+              <a href="/news/">新闻 <i class="fa fa-arrow-left"></i>  </a>
+              <a href="/model/">大模型 <i class="fa fa-arrow-left"></i>  </a>
+              <a href="/sitenav/">网站导航 <i class="fa fa-arrow-left"></i>  </a>
+              {% if request.user.is_authenticated %}
+            	<a href="/backend/">个人中心</a>
+              {% endif %}
+          </div>
+    </el-drawer>
     <nav class="nav_bg">
         <div class="left" id="dynamic_nav">
+            <a @click="nav_drawer=true" href="javascript:void(0);" class="nav_phone_icon"><i class="fa fa-align-justify"></i></a>
             <a href="/">首页</a>
             <a href="/news/">新闻</a>
-            {#            <a href="#">心情</a>#}
             <a href="/model/">大模型</a>
             <a href="/sitenav/">网站导航</a>
         </div>
@@ -245,6 +269,7 @@
                                 </p>
                                 <p>用户总数： <span>{{ sum_user }}  人</span></p>
                                 <p>文章总数： <span>{{ sum_article }} 篇</span></p>
+                                <p>在线人数： <span>[[ online_count ]] 人</span></p>
                                 <p>技术： <span>python django vue axios</span></p>
                             </div>
                         </div>
@@ -311,6 +336,7 @@
     <!--开一个口加js-->
 {% endblock %}
 </html>
+
 <script src="/static/axios/axios.min.js"></script>
 <script src="/static/vue/vue.js"></script>
 <script src="/static/jquery/jquery.min.js"></script>
@@ -320,7 +346,6 @@
 {% block js_model %}
     <script src="/static/my/js/indextwo.js"></script>
 {% endblock %}
-
 <script>
     //把加载动画的代码挂这里，不写如js文件，希望它快一点执行
     document.body.style.overflow = 'hidden';
@@ -328,7 +353,7 @@
         document.body.style.overflow = '';
         $('.loadingdiv').fadeOut("slow");
     });
-
+    
     //--------------- 动态导航栏变色---------------------
     let nav = document.querySelector('.nav_bg')
     window.onscroll = function () {
@@ -339,7 +364,19 @@
             nav.classList.remove('show')
         }
     }
-
+    let articlebottom = document.querySelector('.article_actions')
+    window.onscroll = function () {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop; // 获取当前滚动位置
+        let documentHeight = document.documentElement.scrollHeight; // 获取文档总高度
+        let viewportHeight = window.innerHeight; // 获取视口高度
+        let distanceFromBottom = documentHeight - scrollTop - viewportHeight; // 计算距离底部的距离
+        if (distanceFromBottom <= 200) {
+            articlebottom.classList.add('show_article_action')
+        } else {
+            articlebottom.classList.remove('show_article_action')
+        }
+    }
+    
     // ---------动态导航字体被选中--------------
     function dynamic_nav() {
         let a_list = document.querySelectorAll('#dynamic_nav>a')
@@ -351,9 +388,7 @@
             }
         }
     }
-
     dynamic_nav()
-
     //----------卡片滑动滚动效果---------
     let cards = document.querySelectorAll('.card1')
     window.addEventListener('scroll', () => {

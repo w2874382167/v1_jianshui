@@ -14,12 +14,13 @@ from app.templatetags.viewsHelp import get_client_ip, get_jieqi_index # 获取ip
 
 # 首页
 def index(request):
-    # 所有新闻
-    article_list = Articles.objects.filter(status=1)  # 所有文章，已发布的
+    # 所有文章
+    article_list = Articles.objects.filter(status=1).order_by("-create_date")  # 所有文章，已发布的
+    # print("文章排序", article_list)
     # 推荐的新闻
-    new_list = Articles.objects.filter(recommend=True, category=1)[:6]  # # 新闻上推荐
+    new_list = Articles.objects.filter(recommend=True, category=1).order_by("-create_date")[:6]  # # 新闻上推荐
     # 推荐的游玩
-    play_list = Articles.objects.filter(recommend=True, category=2)[:6]  # # 游玩上推荐
+    play_list = Articles.objects.filter(recommend=True, category=2).order_by("-create_date")[:6]  # # 游玩上推荐
 
     # 分页器
     query_parms = request.GET.copy()
@@ -48,6 +49,7 @@ def index(request):
     sum_user = UserInfo.objects.count()
     # 文章数量
     sum_article = Articles.objects.count()
+
     return render(request, 'index.html', locals())
 
 # 登录
@@ -98,8 +100,7 @@ def backend(request):
         return redirect('/login/')  # 没有登录，不给访问后台
     # ip信息
     ip = get_client_ip(request)
-    print(ip)
-    collect_list = request.user.collects.all()  # 拿到收藏的文章，是自己相关的
+    collect_list = request.user.collects.all().order_by("-create_date")  # 拿到收藏的文章，是自己相关的
     return render(request, 'backend/backend.html', locals())
 
 
@@ -120,5 +121,4 @@ def edit_avator(request):
         return redirect('/login')  # 没有登录，不给访问后台
     # 拿到所有的头像
     avatar_list = Avatars.objects.all()
-    print(avatar_list)
     return render(request, 'backend/edit_avator.html', locals())

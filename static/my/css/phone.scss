@@ -1,0 +1,358 @@
+@media screen and (max-width: 450px){
+  nav{
+    a.nav_phone_icon{
+      display: inline-block;
+    }
+  }
+  // -------顶部窗口------------
+  .nav_bg{
+    padding:0 0 0 15px;
+    >.left{
+      a:not(a:first-child){
+        display: none;
+      }
+    }
+    .el-dropdown{
+      //flex-shrink: 0; //不会变
+    }
+  }
+
+  // -----轮播图片窗口----------
+  header{
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    .title{
+      width: 300px;
+      height: 10px;
+      h1{
+        font-size: 30px;
+        height: 35px;
+        width: 380px;
+        left:-25px;
+        top:-50px;
+        border-right: 2px solid #eee;
+        animation: grow_phone 15s steps(44) 1ms normal infinite,blink 500ms steps(44) infinite normal;
+      }
+      p{
+        font-size: 20px;
+        left:7px;
+        top:20px;
+      }
+    }
+  }
+  // 打字机动画
+  @keyframes grow_phone {
+  0%{
+    width: 0;
+  }
+  50%{
+    width: 380px;
+  }
+  100%{
+    width: 0;
+  }
+}
+
+  // -----主界面-----------
+    //推荐卡片大小
+    .selected_articles .body > ul > li{
+      height: 64px!important;
+    }
+  main{
+    box-sizing: border-box;
+    padding: 15px 8px 5px 8px;
+    width: 420px;
+    .main{
+      width: 100%;
+      //----隐藏右边部分------
+      >.right{
+        display: none;
+      }
+      >.left{
+        width: 100%;
+        >div{
+          margin: 8px 5px 5px 5px;
+        }
+        .card1{
+          height: 150px;
+          h2{
+            font-size: 16px!important;
+            font-weight: bold!important;
+            overflow: hidden;
+            white-space: nowrap;    //不换行
+            text-overflow: ellipsis;
+          }
+          p{
+            font-size: 14px
+          }
+          .right{
+            justify-content: center!important;
+            .article_info{
+              margin: 0;
+              width: 163px;
+              height: 30px;
+              span{
+                margin-left: 11px;
+                margin-bottom: 3px;
+              }
+            }
+            .button{
+              right: 5px!important;
+              font-size: 12px!important;
+              height: 28px!important;
+              width: 55px!important;
+            }
+            &:last-child{
+              .article_info{
+                margin-bottom: 3px;
+              }
+            }
+          }
+
+        }
+        // 分页器
+        .page{
+          height: 40px;
+        }
+        .hot_search{
+          height: 120px;
+        }
+      }
+    }
+
+    // 手机适配网站导航的弹窗
+    .el-form-item{
+      margin-left: 0;
+      .el-form-item__content .el-select{
+        width: 163.25px;
+      }
+      .right{
+        right: 40px;
+        top: 34px;
+      }
+    }
+
+    .el-dialog__footer{
+      margin-top: 15px;
+      .dialog-footer{
+        margin-left: 80px;
+        .el-button+.el-button{
+          margin-left: 90px;
+        }
+      }
+    }
+  }
+
+  //---------底部---------
+  footer{
+    height: 126px;
+    .left{
+      display: none;
+    }
+    .right{
+      width: 100%;
+      .contract{
+        margin-left: 0;
+      }
+      p{
+        margin-bottom: 6px;
+        font-weight: bold;
+        }
+    }
+    .annotation{
+      display: none;
+    }
+  }
+  // 侧边栏 界面右移
+  nav, header, main, footer{
+    transition: all 0.3s;
+    &.showdrawer{
+      transform: translateX(30%);
+    }
+  }
+  .el-drawer__header{
+    transform: translateX(0)!important;
+    height: 50px;
+    padding: 20px 0 0 0;
+    color: var(--drawer-font);
+    border-bottom: 1px solid #5b5d5d;
+  }
+  .el-drawer{
+    background-color: var(--drawer-bg);
+  }
+  .content_drawer{
+    display: flex;
+    flex-direction: column;
+    a{
+      height: 40px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      background-color: var(--drawer_a-bg);
+      color: var(--drawer-font);
+      i{
+        display: none;
+      }
+      &.active{
+        color: var(--drawer_activte-font);
+        i{
+          display: inline;
+          margin-right: 15px;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  //-------新闻界面--------------
+  .new{
+    width: 100%;
+    .news_content{
+      .left {
+        width: 15%;
+        ul{
+          li{
+            padding-left: 5px;
+            height: 55px;
+            font-size: 15px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &:last-child{
+              font-size: 12px;
+            }
+            img{
+              margin-right: 0;
+              margin-bottom: 3px;
+            }
+          }
+        }
+      }
+      .right{
+        .title {
+          font-size: 13px;
+          img{
+            width: 30px;
+          }
+        }
+        .body{
+          ul{
+            li{
+              width: 95%;
+              .index{
+                width: 45px;
+              }
+              a{
+                overflow: hidden;
+                white-space: nowrap;    //不换行
+                text-overflow: ellipsis;
+                font-size: 13px;
+              }
+              .number{
+                font-size: 10px;
+                margin-right: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ------文章内容界面----------
+  .article{
+    width: 98%;
+    .article_actions{
+      right:1%;
+      .item{
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .article_title{
+      box-shadow: none;
+      font-size: 14px;
+      p{
+        font-size: 10px;
+        span:last-child{
+          margin-left: 0;
+          a{
+          font-size: 9px;
+          font-weight: bold;
+          color: #00c4ff;
+        }
+        }
+      }
+      >div{
+        i{
+          font-size: 10px;
+        }
+      }
+    }
+    .article_content > div{
+      box-shadow: none;
+    }
+  }
+
+  //--------大模型界面-----------
+  .model{
+    .bodys{
+      height: calc(100vh - 140px);
+      margin-left: 20px;
+      margin-top: 18px;
+      .menu{
+        display: none;
+      }
+      .view{
+        width: 400px;
+        margin-left: -12px;
+        padding: 10px 20px 10px 20px;
+        .content{
+          .banner{
+            h1{
+              font-size: 20px;
+            }
+            p{
+              width: 100%;
+              margin-left: 10px;
+              margin-top: 10px;
+              font-size: 10px;
+            }
+          }
+          .chatList{
+            padding: 0 10px 10px 10px;
+            margin-top: 10px;
+            border-left: 1px solid var(--model_chatlist_border-color);
+            .icon{
+              padding-left: 25px;
+              height: 80%;
+            }
+            .item{
+              .user-item , .al-item{
+                img{
+                  width: 40px;
+                  height: 40px;
+                }
+                .content{
+                  font-size: 12px;
+                  line-height: 25px;
+                }
+              }
+            }
+          }
+          .input{
+            padding: 0;
+            margin-top: 0;
+            .arco-textarea{
+              font-size: 15px;
+            }
+            span{
+              top: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

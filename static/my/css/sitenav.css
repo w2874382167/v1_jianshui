@@ -1,7 +1,7 @@
 .site {
   width: 85%;
   min-height: 600px;
-  background-color: #efeded;
+  background-color: var(--sitenav-bg);
   border-radius: 5px;
 }
 .site .submit_site {
@@ -34,13 +34,14 @@
   height: 100px;
   border-radius: 6px;
   margin: 5px 10px;
-  background-color: #fff;
+  background-color: var(--site_card-bg);
 }
 .site .site_list .site_content .site_card a {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+  color: var(--site_card-font);
 }
 .site .site_list .site_content .site_card a .left {
   width: 20%;
@@ -94,14 +95,12 @@
 }
 .el-form-item .right {
   position: absolute;
-  right: -56px;
-  top: 0;
-  width: 40px;
-  height: 40px;
+  right: -100px;
+  top: -8px;
+  width: 80px;
+  height: 50px;
 }
 .el-form-item .right img {
   width: 100%;
   height: 100%;
-}
-
-/*# sourceMappingURL=sitenav.css.map */
+}/*# sourceMappingURL=sitenav.css.map */

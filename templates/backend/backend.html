@@ -7,14 +7,17 @@
     {% endblock %}
     <link rel="shortcut icon" href="/static/my/img/favicon/favicon.ico">    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {#------手机适配---------#}
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="/static/my/css/reset.css">
     <link rel="stylesheet" href="/static/my/css/backend/backend_base.css">
     <!-- 引入element-ui样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/static/element-ui/theme-chalk/index.css">
     {% block css %}
     	
     {% endblock %}
+
+    <link rel="stylesheet" href="/static/my/css/backend/backend_phone.css">
 </head>
 <body>
 <div id="app">
@@ -39,7 +42,7 @@
         {% block main %}     <!--  mian 要抽出，其他页面重写-->
         <div class="user_info">
             <div class="left">
-                <img src="{{ request.user.avatar_url}}">
+                <img src="{{ request.user.avatar_url}}" @click="drawer_backend">
             </div>
             <div class="right">
                 <div class="item">
@@ -62,23 +65,23 @@
                     <span><h3>运营商:</h3>{{ ip.owner }}</span>
                 </div>
                 <div class="item">
-                    <span><h3>地址:</h3>{{ ip.country }}·{{ ip.prov }}{{ ip.city }}.{{ ip.district }}</span>
+                    <span><h3>地址:</h3>{{ ip.country }} {{ ip.prov }}{{ ip.city }} {{ ip.district }}</span>
                 </div>
             </div>
         </div>
         <div class="actions">
             <div class="item">
-                <el-button type="primary" round @click="init_user_info">修改信息</el-button>
+                <el-button type="primary" round @click="init_user_info" :size="button_width">修改信息</el-button>
             </div>
             <div class="item">
-                <el-button type="warning" round ><a href="/backend/edit_avator/">修改头像</a></el-button>
+                <el-button type="warning" round  :size="button_width"><a href="/backend/edit_avator/">修改头像</a></el-button>
             </div>
             <div class="item">
-                <el-button type="danger" round><a href="/logout/">注销退出</a></el-button>
+                <el-button type="danger" round :size="button_width"><a href="/logout/">注销退出</a></el-button>
             </div>
             {% if request.user.is_superuser %}
                 <div class="item" id="superuser">
-                    <el-button type="success" round><a href="/backend/add_article/">写文章</a></el-button>
+                    <el-button type="success" round :size="button_width"><a href="/backend/add_article/">写文章</a></el-button>
                 </div>
             {% endif %}
         </div>
@@ -111,7 +114,7 @@
         <el-dialog
           title="完善个人信息"
           :visible.sync="edit_info"
-          width="40%"
+          :width="maxs_dialog_width"
           :modal-append-to-body = "false"
           center>
           <el-form :inline="true" style="margin-left: 5px;"
@@ -132,12 +135,12 @@
                 <el-form-item label="QQ号码：">
                   <el-input suffix-icon="el-icon-edit" v-model="form.qq_num" placeholder="请输入您的QQ号"></el-input>
                 </el-form-item>
-                <el-form-item label="ip：">
-                  <el-input   suffix-icon="el-icon-edit" v-model="form.ip" placeholder="请输入您的新ip"></el-input>
-                </el-form-item>
-                <el-form-item label="地址：">
-                  <el-input suffix-icon="el-icon-edit" v-model="form.addr" placeholder="请输入您的新地址"></el-input>
-                </el-form-item>
+{#                <el-form-item label="ip：">#}
+{#                  <el-input   suffix-icon="el-icon-edit" v-model="form.ip" placeholder="请输入您的新ip"></el-input>#}
+{#                </el-form-item>#}
+{#                <el-form-item label="地址：">#}
+{#                  <el-input suffix-icon="el-icon-edit" v-model="form.addr" placeholder="请输入您的新地址"></el-input>#}
+{#                </el-form-item>#}
               </el-form>
               <span slot="footer" class="dialog-footer">
                 <el-button type="primary" size="mini" @click="edit_info_btn">确定</el-button>
@@ -150,7 +153,8 @@
 </body>
 <script src="/static/axios/axios.min.js"></script>
 <script src="/static/vue/vue.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="/static/element-ui/index.js"></script>
+<script src="/static/jquery/jquery.min.js"></script>
 <script src="/static/my/js/backend.js"></script>
 {% block js %}
 	<!--开一个口加js-->

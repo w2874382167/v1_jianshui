@@ -6,8 +6,6 @@ let menu_time = Number(banner.getAttribute('menu_time'))
 
 let menu_lenth = menu_img.length
 let index = 0
-let timer = null
-clearInterval(timer)
 // 使用定时器
 timer = setInterval(() => {
     // 样式复原
@@ -23,7 +21,6 @@ timer = setInterval(() => {
         clearInterval(timer)
     }
 }, menu_time * 1000)
-
 //--------打字的文字时间-------------------
 let banner_text = document.getElementById('banner_text')
 let text_list = eval(banner_text.getAttribute('lis'))
@@ -42,3 +39,8 @@ timer1 = setInterval(() => {
             banner_text.innerText = text_list[solgan_index]
             solgan_index++
         }, solgan_time * 1000)
+// 在窗口关闭或刷新时清除定时器
+window.onbeforeunload = () => {
+    clearInterval(timer);
+    clearInterval(timer1);
+};

@@ -7,7 +7,7 @@
 
 aside {
   width: 250px;
-  height: 100vh;
+  height: auto;
   background-color: #bdc3c7;
 }
 aside .solan {
@@ -49,20 +49,20 @@ aside a.active {
 
 main {
   width: calc(100% - 250px - 40px);
-  height: calc(100vh - 20px - 20px);
+  min-height: calc(100vh - 20px - 20px);
   background-color: #f0eeee;
   padding: 20px;
 }
 main .user_info {
   width: 100%;
   display: flex;
-  height: 180px;
+  min-height: 180px;
   background-color: #bdc3c7;
   box-shadow: inset 3px 3px 8px 0 rgba(0, 0, 0, 0.35);
   border-radius: 5px 5px 0 0;
 }
 main .user_info .left {
-  width: 40%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,12 +87,13 @@ main .user_info .right .item:last-child {
 }
 main .user_info .right .item:last-child span {
   font-family: "Long Cang", cursive;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   color: #409eff;
+  font-size: 15px;
 }
 main .user_info .right .item:last-child span h3 {
-  font-size: 22px;
+  font-size: 19px;
   color: #000000;
 }
 main .user_info .right .item:nth-last-child(2) span, main .user_info .right .item:nth-last-child(3) span {
@@ -102,7 +103,7 @@ main .user_info .right .item:nth-last-child(2) span h3, main .user_info .right .
   color: #000000;
 }
 main .user_info .right .item span {
-  font-size: 22px;
+  font-size: 18px;
   font-family: "ZCOOL XiaoWei", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -114,7 +115,7 @@ main .user_info .right .item span {
 main .user_info .right .item span h3 {
   font-family: "Long Cang", cursive;
   font-style: normal;
-  font-size: 23px;
+  font-size: 20px;
   margin-right: 10px;
 }
 main .user_info .right .item:nth-child(1), main .user_info .right .item:nth-child(2) {
@@ -144,7 +145,9 @@ main .actions .item:first-child {
 main .collect_article p {
   text-align: center;
   height: 40px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 main .collect_article p span {
   font-size: 18px;
@@ -152,7 +155,7 @@ main .collect_article p span {
 }
 main .collect_article .item {
   background-color: #ecf0f1;
-  height: 400px;
+  min-height: 400px;
 }
 main .collect_article .item > ul {
   width: 100%;
@@ -226,6 +229,4 @@ main .collect_article .item .right span {
 }
 .el-form-item .el-form-item__content .el-select {
   width: 230px;
-}
-
-/*# sourceMappingURL=backend_base.css.map */
+}/*# sourceMappingURL=backend_base.css.map */

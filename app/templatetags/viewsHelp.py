@@ -34,12 +34,14 @@ def get_jieqi_index(today):
 def get_client_ip(request):
     global json_data
     try:
-
+        ip = ''
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
             ip = x_forwarded_for.split(',')[0]
         else:
             ip = request.META.get('REMOTE_ADDR')
+        if not ip:
+            ip = '123.249.121.115'
         url = f"https://qifu-api.baidubce.com/ip/geo/v1/district?ip={ip}"
         header = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
@@ -58,3 +60,5 @@ def get_client_ip(request):
                    'prov': "内网", 'city': "ip",
                    'district': json_data['ip'], 'ip': json_data['ip']}
         return ip_list
+
+

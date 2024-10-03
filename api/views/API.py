@@ -182,6 +182,7 @@ class issueView(View):
                 today = datetime.date.today()
                 date = today.strftime('%Y-%m-%d')  # 格式化为字符串 'YYYY-MM-DD'
             issue = request.data['issue'].rstrip()
+            print("问题", issue)
             if not issue or issue.strip() == "":
                 res['msg'] = "请输入你的疑惑哦，我来替你解答"
                 res['code'] = 0
@@ -196,6 +197,7 @@ class issueView(View):
             answer = SparkApi.answer
             # 调用结束，写入json
             r = api.write_json(issue, answer, date)
+            print("调用",r)
             if r == 0:
                 res['code'] = 1
                 res['msg'] = "已回答"
@@ -207,4 +209,5 @@ class issueView(View):
         except Exception as e:
             res['msg'] = str(e)
             res['code'] = 0
+            print("res" , res)
             return JsonResponse(res)

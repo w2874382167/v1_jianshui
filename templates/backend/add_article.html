@@ -11,20 +11,23 @@
 
 
 {# --------内容区域--------------------#}
-{% block main %}
-	<div class="add_info">
+{% block backend_main %}
+    <div class="phone_edit" v-show="flag_computer_phone==='false'">
+        <p>为了方便您编辑</p>
+        <h2>请使用大尺寸屏幕发布文章</h2>
+    </div>
+	<div class="add_info" v-show="flag_computer_phone===true ">
         <el-button @click="add_drawer=true" type="success" round>文章信息</el-button>
     </div>
-    <div id="editor">
+    <div id="editor" v-show="flag_computer_phone===true ">
         <textarea style="display: none">内容....</textarea>
     </div>
     <el-drawer
           title="完善文章信息"
           :visible.sync="add_drawer"
           direction="rtl"
-{#          :before-close="add_handleClose"#}
-          :modal-append-to-body = "false"
-          :size=600>
+          :size="max_dialog_width"
+          :modal-append-to-body = "false">
       <div class="add_el_drawer_content">
           <el-collapse v-model="add_article_activeNames">
               <el-collapse-item title="文章标题" name="1">
@@ -106,7 +109,6 @@
               <el-button @click="add_article" type="success" round>发布文章</el-button>
           </div>
       </div>
-
     </el-drawer>
 
 {% endblock %}

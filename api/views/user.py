@@ -2,7 +2,7 @@ import json
 from django.http import JsonResponse
 from app.models import *
 from django.views import View # CBV
-
+from app.templatetags.viewsHelp import get_client_ip
 
 # 修改个人信息
 class editUserView(View):
@@ -17,8 +17,6 @@ class editUserView(View):
                 'code': 1,
                 'data': {
                     'name': user.username,
-                    'ip': user.ip,
-                    'addr': user.addr,
                     'qq_num': user.qq_num,
                     'password': "",
                 }
@@ -41,8 +39,6 @@ class editUserView(View):
         user = request.user
         try:
             user.username = data.get('name', user.username)    # 修改用户名
-            user.ip = data.get('ip', user.ip)  # 修改ip
-            user.addr = data.get('addr', user.addr)  # 修改地址
             user.qq_num = data.get('qq_num', user.qq_num)   # 修改QQ号码
             sex = data.get('sex')
             if sex == "女":
@@ -57,7 +53,7 @@ class editUserView(View):
             res['code'] = 1
         except Exception as e:
             res['msg'] = str(e)
-            res['code'] = 1
+            res['code'] = 0
         return JsonResponse(res)
 
 # 修改头像

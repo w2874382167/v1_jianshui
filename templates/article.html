@@ -38,7 +38,7 @@
                 <span>发布时间： <i>{{ article.change_date|date:'Y-m-d' }}</i></span>
                 <span>作者： <i>{{ article.author }}</i></span>
                 <span>来源： <i>{{ article.source }}</i></span>
-                <span style="margin-left: 20px"><a href="{{ article.link }}" target="_blank" style="font-size: 15px;font-weight: bold;color: #00c4ff">点我看原文</a></span>
+                <span><a href="{{ article.link }}" target="_blank" >点我看原文</a></span>
             </p>
             <div>
                 <i title="文章标签" class="fas fa-tags"></i>
@@ -60,15 +60,5 @@
     <script src="/static/editor-md/lib/prettify.min.js"></script>
     <script src="/static/jquery/jquery.min.js"></script>
     <script src="/static/editor-md/editormd.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            let editor = editormd.markdownToHTML("article_content", {
-                width: "20%",
-                height: "20%",
-                path: "/static/editor-md/lib/",
-                htmlDecode: true,
-                codeFold: true,
-            });
-        });
-    </script>
+    <script type="text/javascript" src="/static/my/js/article.js"></script>
 {% endblock %}

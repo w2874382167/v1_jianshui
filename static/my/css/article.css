@@ -1,6 +1,7 @@
 .article {
   width: 80%;
   margin-bottom: 20px;
+  position: relative;
 }
 .article .article_title {
   background-color: #fff;
@@ -21,9 +22,15 @@
 }
 .article .article_title p span:last-child {
   margin-right: 0;
+  margin-left: 20px;
 }
 .article .article_title p span i {
   font-weight: bold;
+}
+.article .article_title p span a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #00c4ff;
 }
 .article .article_title > div {
   margin: 10px 0;
@@ -44,11 +51,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 .article .article_content > div {
+  border-radius: 6px;
   box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.55);
-  background-color: #fff;
-  width: 677px;
   height: 80%;
 }
 .article .article_content > div img {
@@ -64,9 +71,10 @@
   margin-right: auto;
 }
 .article .article_actions {
+  transition: all 2s;
   position: fixed;
   bottom: 30px;
-  right: 16%;
+  right: 10%;
 }
 .article .article_actions .item {
   width: 50px;
@@ -87,5 +95,7 @@
 .article .article_actions .item i.show {
   color: #00FF00;
 }
-
-/*# sourceMappingURL=article.css.map */
+.article .show_article_action {
+  position: absolute;
+  right: -15%;
+}/*# sourceMappingURL=article.css.map */

@@ -35,3 +35,23 @@ class WeatherView(View):
             res['msg'] = str(e)
             res['code'] = 0
             return JsonResponse(res)
+
+
+
+# 获取实时在线人数
+class OnlinePeopleListView(View):
+    def post(self, request):
+        res = {
+            'msg': "在线人数",
+            'code': 0
+        }
+        try:
+            online_people_list = str(len(request.online_list))
+            res['data'] = online_people_list
+            res['code'] = 1
+            return JsonResponse(res)
+        except Exception as e:
+            res['msg'] = str(e)
+            res['data'] = "在线人数获取异常"
+            res['code'] = 0
+            return JsonResponse(res)

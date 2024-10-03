@@ -24,4 +24,5 @@ urlpatterns = [
     path('model/delete/<str:date>/', API.deletechatView.as_view()),  # 删除聊天记录
     path('model/issue/', API.issueView.as_view()),  # 删除聊天记录
     path('weather/', weather.WeatherView.as_view()),  # 天气
+    path('onlinepeople/', weather.OnlinePeopleListView.as_view()),  # 在线人数
 ]

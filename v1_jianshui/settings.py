@@ -51,7 +51,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # 自定义中间件
-    'app.middleware_decode_post.Decode_Post_Middleware',
+    'app.middleware_decode_post.Decode_Post_Middleware',  # 解析post请求的
+    'app.middleware_decode_post.StatisticalMiddleware',  # 在线人数
 
 ]
 
@@ -152,7 +153,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 # 静态文件迁移
-STATIC_ROOT = os.path.join(BASE_DIR, "jstatic")
+STATIC_ROOT = os.path.join(BASE_DIR, "static2")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
