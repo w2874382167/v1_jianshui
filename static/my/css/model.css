@@ -136,7 +136,6 @@
   color: var(--model--font);
   border-radius: 5px;
   margin-top: 5px;
-  width: -moz-fit-content;
   width: fit-content;
   height: 100%;
   font-size: 21px;
@@ -160,7 +159,6 @@
   color: var(--model--font);
   border-radius: 5px;
   margin-top: 5px;
-  width: -moz-fit-content;
   width: fit-content;
   max-width: 600px;
   height: 100%;
@@ -208,11 +206,10 @@
   height: 95%;
 }
 .bodys .view .content .icon img {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  width: 100%;
+  user-select: none;
+  width: 60%;
   height: 100%;
+  margin-left: 200px;
 }
 
 /* 自定义滚动条样式 */
@@ -249,4 +246,6 @@
 
 .history_list::-webkit-scrollbar-thumb:hover {
   background: #555; /* 滑块悬停时颜色 */
-}/*# sourceMappingURL=model.css.map */
+}
+
+/*# sourceMappingURL=model.css.map */

@@ -284,6 +284,11 @@
     padding-left: 25px;
     height: 80%;
   }
+  .model .bodys .view .content .chatList .icon img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
   .model .bodys .view .content .chatList .item .user-item img, .model .bodys .view .content .chatList .item .al-item img {
     width: 40px;
     height: 40px;
@@ -302,4 +307,6 @@
   .model .bodys .view .content .input span {
     top: 4px;
   }
-}/*# sourceMappingURL=phone.css.map */
+}
+
+/*# sourceMappingURL=phone.css.map */
