@@ -56,6 +56,20 @@
 {% endblock %}
 
 {% block js %}
+    <script>
+    let articlebottom = document.querySelector('.article_actions')
+    window.onscroll = function () {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop; // 获取当前滚动位置
+        let documentHeight = document.documentElement.scrollHeight; // 获取文档总高度
+        let viewportHeight = window.innerHeight; // 获取视口高度
+        let distanceFromBottom = documentHeight - scrollTop - viewportHeight; // 计算距离底部的距离
+        if (distanceFromBottom <= 200) {
+            articlebottom.classList.add('show_article_action')
+        } else {
+            articlebottom.classList.remove('show_article_action')
+        }
+    }
+    </script>
     <script src="/static/editor-md/lib/marked.min.js"></script>
     <script src="/static/editor-md/lib/prettify.min.js"></script>
     <script src="/static/jquery/jquery.min.js"></script>
