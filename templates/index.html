@@ -167,7 +167,8 @@
                                     <span class="index">[[ today_index ]]</span>
                                     <a :href="[[ today_url ]]" target="_blank">[[ today_query ]]</a>
                                     <span class="number">[[ today_hotScore ]]</span>
-                                    <img :src="[[ today_img ]]" class="hotimg">
+                                    <!-- 只有当 item.hotTagImg 存在时，才显示 img 元素 -->
+                                    <img v-if="today_img" :src="[[ today_img ]]" class="hotimg">
                                 </div>
                             </div>
                         </div>

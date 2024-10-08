@@ -99,7 +99,7 @@ new Vue({
             }
             //首页今日热搜自动加载
             else if (path.indexOf('/') !== -1) {
-                this.get_new_data('1', '百度', '/static/my/img/new/百度.svg')
+
                 axios.post("/api/news/1/")
                     .then(res => {
                         if (res.code) {
