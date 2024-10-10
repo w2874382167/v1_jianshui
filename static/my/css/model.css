@@ -111,6 +111,10 @@
   margin-top: 30px;
   font-size: 23px;
   color: var(--model--font);
+  border-right: 2px solid #eee;
+  animation: grow_model 8s steps(44) 1ms normal infinite, blink_model 500ms steps(44) infinite normal;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .bodys .view .content .chatList {
   padding: 10px;
@@ -246,6 +250,29 @@
 
 .history_list::-webkit-scrollbar-thumb:hover {
   background: #555; /* 滑块悬停时颜色 */
+}
+
+@keyframes grow_model {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 504px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes blink_model {
+  0% {
+    border-right-color: #eee;
+  }
+  50% {
+    border-right-color: transparent;
+  }
+  100% {
+    border-right-color: #eee;
+  }
 }
 
 /*# sourceMappingURL=model.css.map */

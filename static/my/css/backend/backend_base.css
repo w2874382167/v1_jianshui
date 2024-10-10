@@ -145,9 +145,7 @@ main .actions .item:first-child {
 main .collect_article p {
   text-align: center;
   height: 40px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 main .collect_article p span {
   font-size: 18px;
@@ -229,4 +227,6 @@ main .collect_article .item .right span {
 }
 .el-form-item .el-form-item__content .el-select {
   width: 230px;
-}/*# sourceMappingURL=backend_base.css.map */
+}
+
+/*# sourceMappingURL=backend_base.css.map */
