@@ -27,7 +27,7 @@ axios.interceptors.request.use(request => {
             max_dialog_width:'600px', // 抽屉
             maxs_dialog_width: "40%", //弹窗
             button_width: "medium", // 按钮大小
-            flag_computer_phone: true, //保证用电脑发文章
+            flag_computer_phone: false, //保证用电脑发文章
             aside_main_drawer:true, // 默认要打开侧边栏
             add_drawer:false,  //侧边栏默认关闭
             add_article_activeNames:['1'], //默认填写侧边栏第一个
@@ -73,7 +73,7 @@ axios.interceptors.request.use(request => {
                     this.max_dialog_width = '400px'
                     this.maxs_dialog_width = '420px'
                     this.button_width = "mini"
-                    this.flag_computer_phone = false
+                    this.flag_computer_phone = true
                 }
                 console.log(this.flag_computer_phone)
             },

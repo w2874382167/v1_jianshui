@@ -12,14 +12,14 @@
 
 {# --------内容区域--------------------#}
 {% block backend_main %}
-    <div class="phone_edit" v-show="flag_computer_phone==='false'">
+    <div class="phone_edit" v-show="flag_computer_phone">
         <p>为了方便您编辑</p>
         <h2>请使用大尺寸屏幕发布文章</h2>
     </div>
-	<div class="add_info" v-show="flag_computer_phone===true ">
+	<div class="add_info" v-show=!flag_computer_phone">
         <el-button @click="add_drawer=true" type="success" round>文章信息</el-button>
     </div>
-    <div id="editor" v-show="flag_computer_phone===true ">
+    <div id="editor" v-show="!flag_computer_phone">
         <textarea style="display: none">内容....</textarea>
     </div>
     <el-drawer
