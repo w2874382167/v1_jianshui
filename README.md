@@ -2,9 +2,9 @@
 
 ## 网站演示
 
-![index](.\media\readme\轮播图3.png)
+![index](./media/readme/轮播图3.png)
 
-![首页中部](.\media\readme\首页中部.png)
+![首页中部](./media/readme/首页中部.png)
 
 ## 网站类型
 前后端不作为主体分离，嵌入前后端分离
@@ -38,9 +38,9 @@ Python Django Vue Axios元素ui
 
 ## website demo
 
-![index](.\media\readme\轮播图3.png)
+![index](./media/readme/轮播图3.png)
 
-![首页中部](.\media\readme\首页中部.png)
+![首页中部](./media/readme/首页中部.png)
 
 ## Website Type:
 
