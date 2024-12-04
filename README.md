@@ -1,8 +1,10 @@
 # 建水古城融媒体网站
 
-## 网站演示视频
+## 网站演示
 
-<video height="350px" src="./media/readmeimg/demo.mp4" autoplay="autoplay"  controls="none" ></video>
+![index](.\media\readme\轮播图3.png)
+
+![首页中部](.\media\readme\首页中部.png)
 
 ## 网站类型
 前后端不作为主体分离，嵌入前后端分离
@@ -34,9 +36,11 @@ Python Django Vue Axios元素ui
 
 # Jianshui of Ancient city Integrated Media Website
 
-## Video Demo
+## website demo
 
-<video height="350px" src="./media/readmeimg/demo.mp4" autoplay="autoplay"  controls="none" ></video>
+![index](.\media\readme\轮播图3.png)
+
+![首页中部](.\media\readme\首页中部.png)
 
 ## Website Type:
 
