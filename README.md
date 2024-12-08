@@ -9,29 +9,35 @@
 ## 网站类型
 前后端不作为主体分离，嵌入前后端分离
 ## 技术项
-Python Django Vue Axios element-ui
+Python Django Vue Axios jQuery  element-ui editor-md  html2md
 ## 介绍
 这个网站是兴趣和学习的起点
-分为主页、新闻、大模型、网站导航、后端页面、登录和注册页面
+分为首页、新闻、大模型、网站导航、后台页面、登录注册页面
 ### 首页
-展示了大量文章（来自古城建水微信公众号）。点击阅读详细文章。阅读页面与微信公众号显示一致。
-一些简单的信息显示，云南移动游快速链接，建水方言标签，网站信息
-底部显示：作为另一个信息补充界面，将鼠标放在右侧（点击手机）显示相应的二维码。显示的网站注册是假的。云南省招生考试院本次报名号为假
+展示了大量的文章（来源古城建水微信公众号），点击之后可进行文章的详细阅读，阅读版面和微信公众号展示的一致。
+
+一些简单的信息展示，一部手机游云南的快速链接，建水方言标签，网站信息
+
+底部展示：作为信息补充的另一界面，右边鼠标放上去（手机点击）可出现对应的二维码。其中展示的网站备案是假的，这次云南招生考试院的备案号
 ### 新闻：
-此页面充满了通过网络爬行技术获得的数据，数据是实时的。微信的网络爬虫尚未实现
+本页面全是爬虫技术得到的数据，数据是实时的，微信的爬虫未实现
 ### 大模型：
-实现与人工智能的通信，而不区分用户。来自个人的所有呼叫将一起显示，仅按日期区分。分类做得不好，主要是因为我想不出更好的方法
+实现和人工智能的交流，未做用户区分，所有人的调用将会显示在一块，只以日期为区分。分类做的不好，主要是真的想不到更好的办法了
+
 模型：百度Spark大模型
 ### 网站导航：
-我整理了一份常用网站的清单
-### 功能介绍不完整
-其余页面需要登录才能查看。您可以注册，没有危险
-在这一点上，我认为网站的发展可以结束。毫无疑问，仍有一些领域做得不好，存在漏洞。让我们赶紧结束第一个这样的大型项目吧！
-但建水网站的开发只是第一个版本，我想我以后会做的！！！
+做了一个常用网站的收录
+
+### 功能介绍未尽....
+
+  其余页面，需要登录才能查看，可以注册一下
+至此，该网站的开发我想可以告于段落，毋庸置疑，里面还是有一些做的不好的地方，有bug的地方。就这样草率的结束第一个大型项目吧！
+
+但建水网站的开发，这只是第一版，我想我以后再做！！！
 ## 写在末尾
-2023年11月，我开始制作网页。虽然我做得不好，但这已经是我近一年的技术展示，也是我三个月努力的结果
-您可以具体联系我：libai9123@outlook.com或2874382167@qq.com
-记录我独立开发的第一个大型项目
+2023年11月，我开始学习网页。虽然我做得不好，但这已经是我近一年的技术展示，也是我三个多月努力的结果
+您可以与我联系：libai9123@outlook.com或2874382167@qq.com
+记录我独立开发的第一个大型项目~~
 2024.09
 # 
 ----------------------------------
@@ -49,7 +55,7 @@ The front and rear ends are not separated as the main body, embedded with front 
 
 ## Technical item: 
 
-Python Django Vue Axios element ui
+Python Django Vue Axios jQuery  element-ui editor-md  html2md
 
 ## Introduction:
 
@@ -57,7 +63,7 @@ This website serves as a starting point for interest and learning
 
 Divided into homepage, news, large model, website navigation, backend page, login and registration page
 
-### home page
+### index
 
 A large number of articles were displayed (from the ancient city Jianshui WeChat official account). Click to read the articles in detail. The reading page is consistent with the display of the WeChat official account.
 
