@@ -9,7 +9,7 @@
 ## 网站类型
 前后端不作为主体分离，嵌入前后端分离
 ## 技术项
-Python Django Vue Axios元素ui
+Python Django Vue Axios element-ui
 ## 介绍
 这个网站是兴趣和学习的起点
 分为主页、新闻、大模型、网站导航、后端页面、登录和注册页面
@@ -33,7 +33,8 @@ Python Django Vue Axios元素ui
 您可以具体联系我：libai9123@outlook.com或2874382167@qq.com
 记录我独立开发的第一个大型项目
 2024.09
-
+# 
+----------------------------------
 # Jianshui of Ancient city Integrated Media Website
 
 ## website demo
