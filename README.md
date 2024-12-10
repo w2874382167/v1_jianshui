@@ -7,7 +7,7 @@
 ![首页中部](./media/readme/首页中部.png)
 
 ## 网站类型
-前后端不作为主体分离，嵌入前后端分离
+前后端不分离为主体，嵌入前后端分离
 ## 技术项
 Python Django Vue Axios jQuery  element-ui editor-md  html2md
 ## 介绍
